@@ -18,7 +18,7 @@ The sensor uses the 1-Wire protocol to communicate.
 
 ## Hardware Details
 
-The sensor can be powered using 3.3V or 5V and the signal pin will need a pull-up resistor of 4.7KΩ connected to the same voltage. 
+The sensor can be powered using 3.3V and the signal pin will need a pull-up resistor of 4.7KΩ connected to the same voltage. 
 
 ## Usage
 
