@@ -9,5 +9,5 @@ let slaveId = onewire.getSlaves()[0]
 
 let ds = DS18B20(onewire,slaveId: slaveId)
 
-print(ds.Temperature())
+print(ds.Temperature)
 

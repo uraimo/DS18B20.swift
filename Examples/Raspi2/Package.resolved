@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DS18B20",
+        "repositoryURL": "https://github.com/uraimo/DS18B20.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "cca97d01c00e0c85b5d22dbbadc856a4f9e6ba09",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "SwiftyGPIO",
+        "repositoryURL": "https://github.com/uraimo/SwiftyGPIO.git",
+        "state": {
+          "branch": null,
+          "revision": "34022e469925ea640b41afe3599871fc0ab57ab3",
+          "version": "0.9.11"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
