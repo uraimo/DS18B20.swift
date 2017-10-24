@@ -12,7 +12,7 @@
 
 # Summary
 
-This is a library for the DS18B20 temperature sensor, available in various forms, from a classic ICs to waterproof probes. 
+This is a library for the DS18B20 temperature sensor, available in various forms, from classic ICs to waterproof probes. 
 
 The sensor uses the 1-Wire protocol to communicate.
 
@@ -24,7 +24,7 @@ The sensor can be powered using 3.3V and the signal pin will need a pull-up resi
 
 The temperature returned by the sensor is provided by the only property of the `DS18B20` object: `Temperature`.
 
-The value is in Celsius degrees, if a value in Fahrenheit is required a conversion will be necessary.
+The value is in Celsius degrees, if you need a value in Fahrenheit a manual conversion will be necessary.
 
 As for other libraries, to initialize this object you need to retrieve first a `OneWireInterface` instance from SwiftyGPIO and then initialize the DS18B20 sensor providing a slave id:
 
@@ -39,7 +39,7 @@ let ds = DS18B20(onewire,slaveId: slaveId)
 print(ds.Temperature())
 ```
 
-The slave id identifies a specific sensor, since more than one could be connected to the same 1-Wire bus.
+The slave id is unique and identifies a specific sensor, since more than one could be connected to the same 1-Wire bus.
 
 In most cases you'll just hardcode the slave id you want, instead of selecting one from the list of available slave devices that could sometime return items in a different order.
 
