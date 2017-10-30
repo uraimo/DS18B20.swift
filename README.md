@@ -20,7 +20,7 @@ The sensor uses the 1-Wire protocol to communicate.
 
 The sensor can be powered using 3.3V and the signal pin will need a pull-up resistor of 4.7KΩ connected to the same voltage.
 
-The 1-Wire port on the RaspberryPi needs to be enabled via `raspi-config` before you can use it (restart required), and enabling 1-Wire you'll lose the ability to use the pin as a standard GPIO.
+The 1-Wire port on the RaspberryPi (pin 4) needs to be enabled via `raspi-config` before you can use it (restart required), and enabling 1-Wire you'll lose the ability to use the pin as a standard GPIO.
 
 ## Usage
 
