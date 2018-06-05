@@ -12,19 +12,21 @@
 
 # Summary
 
-This is a library for the DS18B20 temperature sensor, available in various forms, from a classic ICs to waterproof probes. 
+This is a library for the DS18B20 temperature sensor, available in various forms, from classic ICs to waterproof probes. 
 
 The sensor uses the 1-Wire protocol to communicate.
 
 ## Hardware Details
 
-The sensor can be powered using 3.3V and the signal pin will need a pull-up resistor of 4.7KΩ connected to the same voltage. 
+The sensor can be powered using 3.3V and the signal pin will need a pull-up resistor of 4.7KΩ connected to the same voltage.
+
+The 1-Wire port on the RaspberryPi (pin 4) needs to be enabled via `raspi-config` before you can use it (restart required), and enabling 1-Wire you'll lose the ability to use the pin as a standard GPIO.
 
 ## Usage
 
 The temperature returned by the sensor is provided by the only property of the `DS18B20` object: `Temperature`.
 
-The value is in Celsius degrees, if a value in Fahrenheit is required a conversion will be necessary.
+The value is in Celsius degrees, if you need a value in Fahrenheit a manual conversion will be necessary.
 
 As for other libraries, to initialize this object you need to retrieve first a `OneWireInterface` instance from SwiftyGPIO and then initialize the DS18B20 sensor providing a slave id:
 
@@ -39,7 +41,7 @@ let ds = DS18B20(onewire,slaveId: slaveId)
 print(ds.Temperature())
 ```
 
-The slave id identifies a specific sensor, since more than one could be connected to the same 1-Wire bus.
+The slave id is unique and identifies a specific sensor, since more than one could be connected to the same 1-Wire bus.
 
 In most cases you'll just hardcode the slave id you want, instead of selecting one from the list of available slave devices that could sometime return items in a different order.
 
@@ -71,7 +73,7 @@ The directory `Examples` contains sample projects that uses SPM, compile it and 
 
 If SPM is not supported, you'll need to manually download the library and its dependencies: 
 
-    wget https://raw.githubusercontent.com/uraimo/MPU-6050.swift/master/Sources/MPU-6050.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SwiftyGPIO.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/Presets.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/I2C.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SunXi.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/1Wire.swift 
+    wget https://raw.githubusercontent.com/uraimo/DS18B20.swift/master/Sources/DS18B20.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SwiftyGPIO.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/Presets.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SunXi.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/1Wire.swift 
 
 And once all the files have been downloaded, create an additional file that will contain the code of your application (e.g. main.swift). When your code is ready, compile it with:
 
