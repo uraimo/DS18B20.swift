@@ -10,7 +10,7 @@ let package = Package(
             targets: ["DS18B20"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/uraimo/SwiftyGPIO.git", from: "1.0.0"),
+        .package(url: "https://github.com/uraimo/SwiftyGPIO.git", .branch("next_release")),
     ],
     targets: [
         .target(
