@@ -36,7 +36,7 @@ public class DS18B20{
     }
 
     /// Temperature from -55 to +125 degrees Celsius (+/- 0.5C)
-    /// Returns 0°K on error
+    /// Returns NaN on error
     public var Temperature: Float {
 
         do {
