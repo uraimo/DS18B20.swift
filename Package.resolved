@@ -5,9 +5,9 @@
         "package": "SwiftyGPIO",
         "repositoryURL": "https://github.com/uraimo/SwiftyGPIO.git",
         "state": {
-          "branch": null,
-          "revision": "34022e469925ea640b41afe3599871fc0ab57ab3",
-          "version": "0.9.11"
+          "branch": "next_release",
+          "revision": "039941b53af4e8e3321650bc65aefe1f626d2251",
+          "version": null
         }
       }
     ]

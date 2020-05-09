@@ -36,19 +36,26 @@ public class DS18B20{
     }
 
     /// Temperature from -55 to +125 degrees Celsius (+/- 0.5C)
-    /// Returns 0°K on error
+    /// Returns NaN on error
     public var Temperature: Float {
-        for line in onew.readData(slaveId) {
-            //Only 2 lines expected, the 2nd one has the temp value
-	        guard !line.contains("YES") else {
-		        continue
-	        }
-	        let words = line.characters.split{$0 == " "}.map(String.init)
-	        var temp = words[words.count-1]
-	        temp = temp.substring(from: temp.index(temp.startIndex, offsetBy: 2))
-	        return((Float(temp) ?? -273150) / 1000)
+
+        do {
+            for line in try onew.readData(slaveId) {
+                //Only 2 lines expected, the 2nd one has the temp value
+                guard !line.contains("YES") else {
+                    continue
+                }
+                let words = line.split{$0 == " "}.map(String.init)
+                var temp = words[words.count-1]
+                temp = String(temp.dropFirst(2))
+                return((Float(temp) ?? -273150) / 1000)
+            }
         }
-        return -273.15
+        catch {
+            // fall through and return the error value NaN
+        }
+
+        return Float.nan
     }
 
 }
