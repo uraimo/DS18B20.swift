@@ -48,7 +48,6 @@ public class DS18B20{
                 let words = line.split{$0 == " "}.map(String.init)
                 var temp = words[words.count-1]
                 temp = String(temp.dropFirst(2))
-                // temp = temp.substring(from: temp.index(temp.startIndex, offsetBy: 2))
                 return((Float(temp) ?? -273150) / 1000)
             }
         }
