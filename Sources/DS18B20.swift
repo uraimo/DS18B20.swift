@@ -43,9 +43,9 @@ public class DS18B20{
 	        guard !line.contains("YES") else {
 		        continue
 	        }
-	        let words = line.characters.split{$0 == " "}.map(String.init)
+	        let words = line.split{$0 == " "}.map(String.init)
 	        var temp = words[words.count-1]
-	        temp = temp.substring(from: temp.index(temp.startIndex, offsetBy: 2))
+	        temp = String(temp[..<temp.index(temp.startIndex, offsetBy: 2)])
 	        return((Float(temp) ?? -273150) / 1000)
         }
         return -273.15

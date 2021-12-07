@@ -1,4 +1,5 @@
-// swift-tools-version:5.0
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
@@ -16,7 +17,6 @@ let package = Package(
             name: "DS18B20",
             dependencies: ["SwiftyGPIO"],
             path: ".",
-            exclude: ["Examples","ds18b20.png","README.md","LICENSE"],
             sources: ["Sources"])
     ]
 )
